@@ -43,7 +43,7 @@ class _SplsahPageState extends State<SplsahPage>
     Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const SingInPage()),
+        MaterialPageRoute(builder: (_) =>  SingInPage()),
       );
     });
   }
