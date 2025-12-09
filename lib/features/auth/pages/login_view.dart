@@ -6,13 +6,11 @@ import 'package:user_inter_face_2/features/shared/custem_batton.dart';
 import 'package:user_inter_face_2/features/shared/custem_text.dart';
 import 'package:user_inter_face_2/features/shared/custem_text_filed.dart';
 
-class SingInPage extends StatelessWidget {
-  SingInPage({super.key});
+class LoginView extends StatelessWidget {
+  LoginView({super.key});
 
-  TextEditingController NameContrloer = TextEditingController();
-  TextEditingController passowrdContrloer = TextEditingController();
-  TextEditingController emailContrloer = TextEditingController();
-  TextEditingController confirm_passowrdContrloer = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class SingInPage extends StatelessWidget {
               children: [
                 Gap(100),
                 CustemText(
-                  text: "Welcome to Rahhala App",
+                  text: "Welcome Back",
                   color: Colors.white,
                   size: 25,
                   weight: FontWeight.bold,
@@ -50,52 +48,35 @@ class SingInPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Gap(50),
-
-                    // name   emile and passowed
-                    CustemTextFiled(
-                      hintText: 'Name',
-                      controller: NameContrloer,
-                    ),
-
-                    Gap(20),
-
                     CustemTextFiled(
                       hintText: 'Email',
-                      controller: emailContrloer,
+                      controller: emailController,
                     ),
-
                     Gap(20),
-
                     CustemTextFiled(
                       hintText: 'Password',
-                      controller: passowrdContrloer,
+                      controller: passwordController,
                     ),
-
                     Gap(50),
-
-                    CustemBatton(text: "Sign In"),
-
+                    CustemBatton(text: "Login"),
                     Gap(20),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Alrydy have an acount?",
+                          "Don't have an account?",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 17,
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-
                         TextButton(
                           onPressed: () {
-                            context.push('/login');
+                            GoRouter.of(context).push('/signIn');
                           },
-
                           child: Text(
-                            "Login",
+                            "Sign Up",
                             style: TextStyle(
                               color: AppColors.primaryColor,
                               fontSize: 20,
