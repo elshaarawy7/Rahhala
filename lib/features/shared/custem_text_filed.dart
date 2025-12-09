@@ -38,11 +38,11 @@ class _CustemTextFiledState extends State<CustemTextFiled> {
           return "please fill";
         }
         {
-          null;
+          return null;
         }
       },
       controller: widget.controller,
-      obscureText: widget.isPassowrd,
+      obscureText: _obscureText ,
 
       cursorHeight: 20,
       decoration: InputDecoration(

@@ -3,18 +3,15 @@ import 'package:user_inter_face_2/core/constants/app_colos.dart';
 import 'package:user_inter_face_2/features/home/pages/home_page.dart';
 
 class CustemBatton extends StatelessWidget {
-  const CustemBatton({super.key, required this.text}); 
+  const CustemBatton({super.key, required this.text, this.onTap}); 
 
   final String text ;
+  final void Function()? onTap ;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:() {
-        Navigator.push(context, MaterialPageRoute(builder: (context){
-          return HomePage();
-        }));
-      } ,
+      onTap:onTap ,
       child: Container(
         height: 75, 
        width: double.infinity,

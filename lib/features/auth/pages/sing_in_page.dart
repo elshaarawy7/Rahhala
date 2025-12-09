@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
+import 'package:user_inter_face_2/core/utils/go_router.dart';
+import 'package:user_inter_face_2/features/auth/widgets/item_scoil.dart';
 import 'package:user_inter_face_2/features/shared/custem_batton.dart';
 import 'package:user_inter_face_2/features/shared/custem_text.dart';
 import 'package:user_inter_face_2/features/shared/custem_text_filed.dart';
@@ -14,103 +16,130 @@ class SingInPage extends StatelessWidget {
   TextEditingController emailContrloer = TextEditingController();
   TextEditingController confirm_passowrdContrloer = TextEditingController();
 
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Gap(100),
-                CustemText(
-                  text: "Welcome to Rahhala App",
-                  color: Colors.white,
-                  size: 25,
-                  weight: FontWeight.bold,
-                ),
-                Gap(100),
-              ],
-            ),
-          ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  topRight: Radius.circular(12),
-                ),
+      body: Form(
+        key: formKey,
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  Gap(100),
+                  CustemText(
+                    text: "Welcome to Rahhala App",
+                    color: Colors.white,
+                    size: 25,
+                    weight: FontWeight.bold,
+                  ),
+                  Gap(100),
+                ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  children: [
-                    Gap(50),
+            ),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(12),
+                    topRight: Radius.circular(12),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    children: [
+                      Gap(50),
 
-                    // name   emile and passowed
-                    CustemTextFiled(
-                      hintText: 'Name',
-                      controller: NameContrloer,
-                    ),
+                      // name   emile and passowed
+                      CustemTextFiled(
+                        hintText: 'Name',
+                        controller: NameContrloer,
+                      ),
 
-                    Gap(20),
+                      Gap(20),
 
-                    CustemTextFiled(
-                      hintText: 'Email',
-                      controller: emailContrloer,
-                    ),
+                      CustemTextFiled(
+                        hintText: 'Email',
+                        controller: emailContrloer,
+                      ),
 
-                    Gap(20),
+                      Gap(20),
 
-                    CustemTextFiled(
-                      hintText: 'Password',
-                      controller: passowrdContrloer,
-                    ),
+                      CustemTextFiled(
+                        hintText: 'Password',
+                        controller: passowrdContrloer,
+                      ),
 
-                    Gap(50),
+                      Gap(50),
 
-                    CustemBatton(text: "Sign In"),
+                      CustemBatton(
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            context.go(AppRouter.home);
+                          }
+                        },
+                        text: "Sign In",
+                      ),
 
-                    Gap(20),
+                      Gap(20),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Alrydy have an acount?",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 17,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-
-                        TextButton(
-                          onPressed: () {
-                            context.push('/login');
-                          },
-
-                          child: Text(
-                            "Login",
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Alrydy have an acount?",
                             style: TextStyle(
-                              color: AppColors.primaryColor,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.normal,
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+
+                          TextButton(
+                            onPressed: () {
+                              context.push('/login');
+                            },
+
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                color: AppColors.primaryColor,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  Gap(20),
+                  Row(
+                    children: [
+                      ItemScoil(image: 'assets/apple.png'),
+                      ItemScoil(image: 'assets/Facebook.png'),
+                      ItemScoil(image: 'assets/Google.png'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
