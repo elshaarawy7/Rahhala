@@ -4,6 +4,7 @@ import 'package:user_inter_face_2/core/constants/app_colos.dart';
 import 'package:user_inter_face_2/features/home/data/destinations_data.dart';
 import 'package:user_inter_face_2/features/home/widgets/destination_card.dart';
 import 'package:user_inter_face_2/features/home/widgets/home_header.dart';
+import 'package:user_inter_face_2/features/home/widgets/search_bar_widget.dart';
 import 'package:user_inter_face_2/features/shared/custem_text.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,6 +62,14 @@ class HomePage extends StatelessWidget {
           children: [
             // Header Section
             const HomeHeader(),
+
+            // Search Bar Section
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: SearchBarWidget(),
+            ),
+
+            const Gap(24),
 
             // Popular Destinations Section
             Padding(
