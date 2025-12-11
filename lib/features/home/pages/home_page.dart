@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
 import 'package:user_inter_face_2/features/home/data/destinations_data.dart';
 import 'package:user_inter_face_2/features/home/widgets/destination_card.dart';
 import 'package:user_inter_face_2/features/home/widgets/home_header.dart';
+import 'package:user_inter_face_2/features/shared/custem_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,14 +19,12 @@ class HomePage extends StatelessWidget {
         title: Row(
           children: [
             Icon(Icons.flight_takeoff, color: AppColors.primaryColor, size: 28),
-            const SizedBox(width: 8),
-            const Text(
-              'رحالة',
-              style: TextStyle(
-                color: Colors.black87,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+            Gap(8),
+            CustemText(
+              text: 'رحالة',
+              color: Colors.black87,
+              size: 24,
+              weight: FontWeight.bold,
             ),
           ],
         ),

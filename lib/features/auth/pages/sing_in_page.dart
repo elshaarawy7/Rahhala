@@ -118,24 +118,22 @@ class SingInPage extends StatelessWidget {
                           ),
                         ],
                       ),
+
+                      Gap(30),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ItemScoil(image: 'assets/schoil/apple.png'),
+                          Gap(10) ,
+                          ItemScoil(image: 'assets/schoil/Facebook.png'),
+                           Gap(10) ,
+                          ItemScoil(image: 'assets/schoil/Google.png'),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-              ),
-            ),
-
-            SliverToBoxAdapter(
-              child: Column(
-                children: [
-                  Gap(20),
-                  Row(
-                    children: [
-                      ItemScoil(image: 'assets/apple.png'),
-                      ItemScoil(image: 'assets/Facebook.png'),
-                      ItemScoil(image: 'assets/Google.png'),
-                    ],
-                  ),
-                ],
               ),
             ),
           ],

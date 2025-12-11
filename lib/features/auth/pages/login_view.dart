@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
 import 'package:user_inter_face_2/core/utils/go_router.dart';
+import 'package:user_inter_face_2/features/auth/widgets/item_scoil.dart';
 import 'package:user_inter_face_2/features/shared/custem_batton.dart';
 import 'package:user_inter_face_2/features/shared/custem_text.dart';
 import 'package:user_inter_face_2/features/shared/custem_text_filed.dart';
@@ -11,9 +12,9 @@ class LoginView extends StatelessWidget {
   LoginView({super.key});
 
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController(); 
+  final TextEditingController passwordController = TextEditingController();
 
-   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +65,13 @@ class LoginView extends StatelessWidget {
                       ),
                       Gap(50),
                       CustemBatton(
-                        onTap:  () {
+                        onTap: () {
                           if (formKey.currentState!.validate()) {
                             context.go(AppRouter.home);
                           }
                         },
-                        text: "Login"),
+                        text: "Login",
+                      ),
                       Gap(20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -95,6 +97,18 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                           ),
+                        ],
+                      ),
+
+                      Gap(30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ItemScoil(image: 'assets/schoil/apple.png'),
+                          Gap(10),
+                          ItemScoil(image: 'assets/schoil/Facebook.png'),
+                          Gap(10),
+                          ItemScoil(image: 'assets/schoil/Google.png'),
                         ],
                       ),
                     ],
