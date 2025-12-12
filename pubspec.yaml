@@ -56,6 +56,7 @@ flutter:
   assets:
     - assets/schoil/
     - assets/filgth/
+    - assets/540776597_1134288905261735_5497583683761795195_n.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

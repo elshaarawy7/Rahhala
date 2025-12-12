@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
+import 'package:user_inter_face_2/core/utils/go_router.dart';
 import 'package:user_inter_face_2/features/home/data/destinations_data.dart';
 import 'package:user_inter_face_2/features/home/widgets/destination_card.dart';
 import 'package:user_inter_face_2/features/home/widgets/home_header.dart';
@@ -64,22 +66,7 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
             children: [
               // Header Section
               const HomeHeader(),
@@ -140,17 +127,7 @@ class HomePage extends StatelessWidget {
                   return DestinationCard(
                     destination: destination,
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: CustemText(
-                            text:
-                                'تم اختيار ${destination.cityName}, ${destination.countryName}',
-                            color: Colors.white,
-                          ),
-                          duration: const Duration(seconds: 2),
-                          backgroundColor: AppColors.primaryColor,
-                        ),
-                      );
+                      context.push(AppRouter.home_detils, extra: destination);
                     },
                   );
                 },
