@@ -76,25 +76,21 @@ class LoginView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 17,
-                              fontWeight: FontWeight.normal,
-                            ),
+                          CustemText(
+                            text: "Don't have an account?",
+                            color: Colors.black,
+                            size: 17,
+                            weight: FontWeight.normal,
                           ),
                           TextButton(
                             onPressed: () {
                               context.go(AppRouter.signIn);
                             },
-                            child: Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                color: AppColors.primaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: CustemText(
+                              text: "Sign Up",
+                              color: AppColors.primaryColor,
+                              size: 20,
+                              weight: FontWeight.bold,
                             ),
                           ),
                         ],

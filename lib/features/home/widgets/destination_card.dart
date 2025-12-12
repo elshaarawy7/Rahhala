@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
 import 'package:user_inter_face_2/features/home/data/destination_model.dart';
+import 'package:user_inter_face_2/features/shared/custem_text.dart';
 
 class DestinationCard extends StatelessWidget {
   final Destination destination;
@@ -85,21 +86,17 @@ class DestinationCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      destination.cityName,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    CustemText(
+                      text: destination.cityName,
+                      color: Colors.white,
+                      size: 18,
+                      weight: FontWeight.bold,
                     ),
                     const SizedBox(height: 2),
-                    Text(
-                      destination.countryName,
-                      style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 13,
-                      ),
+                    CustemText(
+                      text: destination.countryName,
+                      color: Colors.white.withOpacity(0.9),
+                      size: 13,
                     ),
                     const SizedBox(height: 4),
                     Container(
@@ -111,13 +108,11 @@ class DestinationCard extends StatelessWidget {
                         color: AppColors.primaryColor.withOpacity(0.8),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        destination.description,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500,
-                        ),
+                      child: CustemText(
+                        text: destination.description,
+                        color: Colors.white,
+                        size: 10,
+                        weight: FontWeight.w500,
                       ),
                     ),
                   ],

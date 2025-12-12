@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('الإشعارات'),
+                  content: CustemText(text: 'الإشعارات', color: Colors.white),
                   duration: Duration(seconds: 1),
                 ),
               );
@@ -48,7 +48,10 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('الملف الشخصي'),
+                  content: CustemText(
+                    text: 'الملف الشخصي',
+                    color: Colors.white,
+                  ),
                   duration: Duration(seconds: 1),
                 ),
               );
@@ -57,62 +60,71 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Header Section
-            const HomeHeader(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            children: [
+              // Header Section
+              const HomeHeader(),
 
-            // Search Bar Section
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: SearchBarWidget(),
-            ),
+              // Search Bar Section
+              SearchBarWidget(),
 
-            const Gap(24),
+              const Gap(24),
 
-            // Popular Destinations Section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
+              // Popular Destinations Section
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'الوجهات الشائعة',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
+                  const CustemText(
+                    text: 'الوجهات الشائعة',
+                    size: 22,
+                    weight: FontWeight.bold,
+                    color: Colors.black87,
                   ),
                   TextButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('عرض الكل'),
+                          content: CustemText(
+                            text: 'عرض الكل',
+                            color: Colors.white,
+                          ),
                           duration: Duration(seconds: 1),
                         ),
                       );
                     },
-                    child: Text(
-                      'عرض الكل',
-                      style: TextStyle(
-                        color: AppColors.primaryColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    child: CustemText(
+                      text: 'عرض الكل',
+                      color: AppColors.primaryColor,
+                      size: 14,
+                      weight: FontWeight.w600,
                     ),
                   ),
                 ],
               ),
-            ),
 
-            const SizedBox(height: 16),
+              const SizedBox(height: 16),
 
-            // Destinations Grid
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: GridView.builder(
+              // Destinations Grid
+              GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -130,8 +142,10 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content: Text(
-                            'تم اختيار ${destination.cityName}, ${destination.countryName}',
+                          content: CustemText(
+                            text:
+                                'تم اختيار ${destination.cityName}, ${destination.countryName}',
+                            color: Colors.white,
                           ),
                           duration: const Duration(seconds: 2),
                           backgroundColor: AppColors.primaryColor,
@@ -141,10 +155,10 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-            ),
 
-            const SizedBox(height: 24),
-          ],
+              const SizedBox(height: 24),
+            ],
+          ),
         ),
       ),
     );

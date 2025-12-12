@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:user_inter_face_2/core/constants/app_colos.dart';
+import 'package:user_inter_face_2/features/shared/custem_text.dart';
 
 class SplsahPage extends StatefulWidget {
   const SplsahPage({super.key});
@@ -63,13 +64,11 @@ class _SplsahPageState extends State<SplsahPage>
           // Text Animation
           FadeTransition(
             opacity: _fadeAnimation,
-            child: const Text(
-              "Welcom to Rehla App",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+            child: const CustemText(
+              text: "Welcom to Rehla App",
+              color: Colors.white,
+              size: 30,
+              weight: FontWeight.bold,
             ),
           ),
 

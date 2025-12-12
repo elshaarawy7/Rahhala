@@ -93,13 +93,11 @@ class SingInPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Alrydy have an acount?",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 17,
-                              fontWeight: FontWeight.normal,
-                            ),
+                          CustemText(
+                            text: "Alrydy have an acount?",
+                            color: Colors.black,
+                            size: 17,
+                            weight: FontWeight.normal,
                           ),
 
                           TextButton(
@@ -107,13 +105,11 @@ class SingInPage extends StatelessWidget {
                               context.push('/login');
                             },
 
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                color: AppColors.primaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: CustemText(
+                              text: "Login",
+                              color: AppColors.primaryColor,
+                              size: 20,
+                              weight: FontWeight.bold,
                             ),
                           ),
                         ],
@@ -125,9 +121,9 @@ class SingInPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ItemScoil(image: 'assets/schoil/apple.png'),
-                          Gap(10) ,
+                          Gap(10),
                           ItemScoil(image: 'assets/schoil/Facebook.png'),
-                           Gap(10) ,
+                          Gap(10),
                           ItemScoil(image: 'assets/schoil/Google.png'),
                         ],
                       ),
